@@ -6,72 +6,60 @@
 	
 		<main>
 			<section class="container">
-				<article class="col-xs-12 col-md-4">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
+				<article class="col-xs-12">
+					
+						<h2>Auteur :</h2>
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-					</div>
+						<label for="nom">
+						    Nom :
+						    <input class="form-control" id="nom" type="text" placeholder="nom" />
+						</label>
+						<label for="prenom">
+						    Prénom :
+						    <input class="form-control" id="prenom" type="text" placeholder="prenom" />
+						</label>
+					
 
 					
 				</article>
-				<article class="col-xs-12 col-md-4">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-					</div>
+				<article class="col-xs-12">
+					
+						<h2>Catégorie :</h2>
+
+						<select class="selectpicker">
+						  <option>Mustard</option>
+						  <option>Ketchup</option>
+						  <option>Relish</option>
+						</select>
+
+						<label for="ajouter">
+						    Ajouter :
+						    <input class="form-control" id="ajouter" type="text" placeholder="ajouter" />
+						</label>
+					
 
 					
 				</article>
-				<article class="col-xs-12 col-md-4">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-					</div>
+				<article class="col-xs-12">
+					
+						<h2>Article :</h2>
+
+						
+
+						<label for="sujet">
+						    Sujet :
+						    <input class="form-control" id="sujet" type="text" placeholder="sujet" />
+						</label>
+						 
+						<label for="contenu">Contenu :</label>
+						<textarea class="form-control" id="contenu" name="contenu"></textarea>
+					
 
 					
 				</article>
-				<article class="col-xs-12 col-md-4">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
-
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-					</div>
-
-					
-				</article>
-				<article class="col-xs-12 col-md-4">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
-
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-					</div>
-
-					
-				</article>
-				<article class="col-xs-12 col-md-4">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
-
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-					</div>
-
-					
-				</article>
+				
 				
 				
 			</section>

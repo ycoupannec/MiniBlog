@@ -5,7 +5,8 @@ include ".config.php";
 $auteur=$_REQUEST("auteur");
 $categorie=$_REQUEST("categorie");*/
 
-
+require_once("Mustache/Autoloader.php");
+Mustache_Autoloader::register();
 
 try
 {
@@ -21,8 +22,42 @@ $sth = $bdd->prepare('SELECT * , auteur.nom as nomAuteur FROM article, auteur , 
 $sth->execute();
 
 
-$contained=$sth->fetchAll(PDO::FETCH_CLASS);
-print_r ($contained);
+$contained['articles']=$sth->fetchAll(PDO::FETCH_CLASS);
+/*print_r ($contained);*/
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+$sth = $bdd->prepare('SELECT * FROM `categorie`');
+$sth->execute();
+
+
+$contained['categorie'] = $sth->fetchAll(PDO::FETCH_CLASS);
+
+
+	/*require_once("Mustache/Autoloader.php");*/
+$m = new Mustache_Engine;
+
+$headerR=file_get_contents('header.html');
+//$headerR= $m->render($headerR, array('categorie' => $contained)); 
+
+$sth = $bdd->prepare('SELECT * FROM `auteur`');
+$sth->execute();
+
+
+$contained['auteur']=$sth->fetchAll(PDO::FETCH_CLASS);
+
+	/*require_once("Mustache/Autoloader.php");*/
+
+print_r($contained);
+$headerR= $m->render($headerR, $contained); 
+echo $headerR;
+
+
 
 
 ?>

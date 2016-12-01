@@ -1,59 +1,19 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8"/>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
-	  <title>Mini Blog</title>
-	</head>
-	<body>
-		<header class="container-fluid">
-			<div class="navbar ">
-			  <div class="navbar-header col-xs-8">
-			    <a class="navbar-brand" href="#">Mini Blog</a>
-			  </div>
-		        <nav class="col-xs-4">
-		            <ul class="nav navbar-nav">
-		                <li><a href="#">Ajout article</a></li>
-
-		                <li class="dropdown">
-		                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Catégorie <b class="caret"></b></a>
-		                    <ul class="dropdown-menu">
-		                        <li><a href="#">Lien #2-a</a></li>
-		                        <li><a href="#">Lien #2-b</a></li>
-		                        <li><a href="#">Lien #2-c</a></li>
-		                    </ul>
-		                </li>
-
-		                <li class="dropdown">
-		                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Auteur <b class="caret"></b></a>
-		                    <ul class="dropdown-menu">
-		                        <li><a href="#">Lien #2-a</a></li>
-		                        <li><a href="#">Lien #2-b</a></li>
-		                        <li><a href="#">Lien #2-c</a></li>
-		                    </ul>
-		                </li>
-		            </ul>
-		        </nav>
-		    </div>
-
-		</header>
+<?php
+ 		include "header.php"
+		?>
 
 
 		<main>
 			<section class="container">
 				<div class="">
-					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-					<div class="modal fade" id="myModal" role="dialog">
-     				<div class="modal-dialog">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button><!-- boutton pour ouvrir le modal -->
+			<div class="modal fade" id="myModal" role="dialog"><!-- déclaration du modal -->
+     			<div class="modal-dialog"><!-- déclaration du modal-->
 
-						<div class="modal-content">
+						<div class="modal-content"> <!-- contenu du modal-->
 									<article class="col-xs-12 col-md-4" data-toggle="modal" data-target="#myModal"> <!--contenu de l'article -->
 
 										<div class="modal-header">
@@ -69,7 +29,7 @@
 										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			        			</div>
 									</article> <!-- contenu de l'article -->
-						</div>
+						</div><!-- fin du modal -->
 
 					</div>
 				</div>
@@ -134,10 +94,6 @@
 
 			</section>
 		</main>
-
-		<footer class="container-fluid">
-
-		</footer>
-	</body>
-	<script type="text/javascript" src="js/javas.js"></script>
-</html>
+		<?php
+	include "main.php"
+ 		?>

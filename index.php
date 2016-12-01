@@ -1,108 +1,69 @@
-
-<!DOCTYPE html>
-<html>
 <?php
- 		include "build.php";
-		?>
+
+include ".config.php";
+/*
+$auteur=$_REQUEST("auteur");
+$categorie=$_REQUEST("categorie");*/
+
+require_once("Mustache/Autoloader.php");
+Mustache_Autoloader::register();
+
+try
+{
+  $bdd = new PDO($lienConnect,$login, $MDP);
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+
+/*<!-- SELECT * FROM article, auteur , categorie WHERE article.categorieId=categorie.id AND article.auteurId=auteur.id ORDER BY article.dateCreation DESC -->*/
+$sth = $bdd->prepare('SELECT * , auteur.nom as nomAuteur FROM article, auteur , categorie WHERE article.categorieId=categorie.id AND article.auteurId=auteur.id ORDER BY article.dateCreation DESC');
+$sth->execute();
 
 
-		<main>
-			<section class="container">
-				  <a data-toggle="modal" data-target="#myModal">Lire plus</a>
-				<div class="modal fade" id="myModal" role="dialog">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-									<article class="col-xs-12 col-md-4">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal">&times;</button>
-												<div class="dateCreation">10/10/98</div>
-												<div class="sujetArticle"><h2>Titre article</h2></div>
-											</div>
-										<div class="modal-body"> <!-- contenu test-->
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Integer dapibus enim ac placerat gravida. Sed hendrerit ullamcorper orci, in blandit nibh efficitur sed.
-												Nam blandit</p>
-										</div>
-											<div class="row modal-footer"
-												<div class="col-xs-6"><a href="">Auteur</a></div>
-												<div class="col-xs-6"><a href="">Catégorie</a></div>
-												<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-											</div>
-			        		</article>
-						</div>
-					</div>
-				</div>
+$contained['articleblog']=$sth->fetchAll(PDO::FETCH_CLASS);
+/*print_r ($contained);*/
+$template = new Mustache_Engine;
 
 
-				<article class="col-xs-12 col-md-3">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-                         <div class="lien text-center">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-                        </div>
-					</div>
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-				</article>
-				<article class="col-xs-12 col-md-3">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-                     <div class="lien text-center">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-                        </div>
-					</div>
+$sth = $bdd->prepare('SELECT * FROM `categorie`');
+$sth->execute();
 
 
-				</article>
-				<article class="col-xs-12 col-md-3">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-                         <div class="lien text-center">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
-
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-                        </div>
-					</div>
+$contained['categorie'] = $sth->fetchAll(PDO::FETCH_CLASS);
 
 
-				</article>
-				<article class="col-xs-12 col-md-3">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-                     <div class="lien text-center">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
+	/*require_once("Mustache/Autoloader.php");*/
+$m = new Mustache_Engine;
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-                        </div>
-					</div>
+$headerR=file_get_contents('header.html');
+//$headerR= $m->render($headerR, array('categorie' => $contained)); 
+
+$sth = $bdd->prepare('SELECT * FROM `auteur`');
+$sth->execute();
 
 
-				</article>
-				<article class="col-xs-12 col-md-3">
-					<div class="dateCreation">10/10/98</div>
-					<div class="sujetArticle"><h2>Titre article</h2></div>
-					<div class="row">
-                     <div class="lien text-center">
-						<div class="col-xs-6"><a href="">Auteur</a></div>
+$contained['auteur']=$sth->fetchAll(PDO::FETCH_CLASS);
 
-						<div class="col-xs-6"><a href="">Catégorie</a></div>
-                        </div>
-					</div>
+	/*require_once("Mustache/Autoloader.php");*/
+
+print_r($contained);
+$headerR= $m->render($headerR, $contained); 
+$headerR.=file_get_contents('footer.php');
+
+echo $headerR;
 
 
-				</article>
 
 
-			</section>
-		</main>
-		<?php
-	include "footer.php";
- 		?>
+?>
+

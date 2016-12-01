@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <?php
- 		include "header.php"
+ 		include "header.php";
 		?>
 
 
@@ -104,5 +104,5 @@
 			</section>
 		</main>
 		<?php
-	include "main.php"
+	include "main.php";
  		?>

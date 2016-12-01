@@ -7,3 +7,6 @@ $(window).scroll(function() {
         $(".navbar").removeClass(" navbar-fixed-top navbarmod");
     }
 });
+
+
+

@@ -11,6 +11,7 @@
 	<?php
 	require_once(‘Mustache/Autoloader.php’);
 	Mustache_Autoloader::register();
+	include "build.php";
 	?>
 		<header class="container-fluid">
 			<div class="navbar ">

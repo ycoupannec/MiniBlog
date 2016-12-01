@@ -104,5 +104,5 @@
 			</section>
 		</main>
 		<?php
-	include "main.php";
+	include "footer.php";
  		?>

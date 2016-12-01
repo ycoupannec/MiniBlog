@@ -7,6 +7,10 @@
 		<title>Mini Blog</title>
 	</head>
 	<body>
+	<?php
+	require_once(‘Mustache/Autoloader.php’);
+	Mustache_Autoloader::register();
+	?>
 		<header class="container-fluid">
 			<div class="navbar ">
 			  <div class="navbar-header col-xs-8">

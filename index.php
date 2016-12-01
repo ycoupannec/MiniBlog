@@ -8,29 +8,28 @@
 
 		<main>
 			<section class="container">
-				<div class="">
-					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button><!-- boutton pour ouvrir le modal -->
-			<div class="modal fade" id="myModal" role="dialog"><!-- déclaration du modal -->
-     			<div class="modal-dialog"><!-- déclaration du modal-->
-
-						<div class="modal-content"> <!-- contenu du modal-->
-									<article class="col-xs-12 col-md-4" data-toggle="modal" data-target="#myModal"> <!--contenu de l'article -->
-
-										<div class="modal-header">
-											<div class="dateCreation">10/10/98</div>
-											<div class="sujetArticle"><h2>Titre article</h2></div>
+				  <a data-toggle="modal" data-target="#myModal">Lire plus</a>
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+									<article class="col-xs-12 col-md-4">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<div class="dateCreation">10/10/98</div>
+												<div class="sujetArticle"><h2>Titre article</h2></div>
+											</div>
+										<div class="modal-body"> <!-- contenu test-->
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+												Integer dapibus enim ac placerat gravida. Sed hendrerit ullamcorper orci, in blandit nibh efficitur sed.
+												Nam blandit</p>
 										</div>
-
-										<div class="modal-footer">
-											<div class="row">
+											<div class="row modal-footer"
 												<div class="col-xs-6"><a href="">Auteur</a></div>
 												<div class="col-xs-6"><a href="">Catégorie</a></div>
+												<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 											</div>
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        			</div>
-									</article> <!-- contenu de l'article -->
-						</div><!-- fin du modal -->
-
+			        		</article>
+						</div>
 					</div>
 				</div>
 

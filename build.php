@@ -21,9 +21,8 @@ $sth = $bdd->prepare('SELECT * , auteur.nom as nomAuteur FROM article, auteur , 
 $sth->execute();
 
 
-foreach ($sth as $key => $contained) {
-	echo $contained['nomAuteur'];
-}
+$contained=$sth->fetchAll(PDO::FETCH_CLASS);
+print_r ($contained);
 
 
 ?>

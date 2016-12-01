@@ -9,7 +9,8 @@
 	</head>
 	<body>
 	<?php
-	require_once(‘Mustache/Autoloader.php’);
+	ini_set('display_errors', 1);
+	require_once("Mustache/Autoloader.php");
 	Mustache_Autoloader::register();
 	include "build.php";
 	?>

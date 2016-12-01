@@ -14,11 +14,11 @@
 		<header class="container-fluid">
 			<div class="navbar ">
 			  <div class="navbar-header col-xs-8">
-			    <a class="navbar-brand" href="#">Mini Blog</a>
+			    <a class="navbar-brand" href="index.php">Mini Blog</a>
 			  </div>
 		        <nav class="col-xs-4">
 		            <ul class="nav navbar-nav">
-		                <li><a href="#">Ajout article</a></li>
+		                <li><a href="modifArticle.php">Ajout article</a></li>
 		                
 		                <li class="dropdown">
 		                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Catégorie <b class="caret"></b></a>

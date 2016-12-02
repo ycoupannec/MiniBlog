@@ -1,27 +1,41 @@
-article{
-    height: 30vh;
-    width: 80%;
-    
+@font-face {
+  font-family: MyFont;
+  src: url(Roboto-BlackItalic.ttf);
 }
+body {
+  background-image: url("background.png");
+  font-family: MyFont;
+}
+
 section{
-   background-color: #4D4D4D;
-  
+   background-color:  #2A282D;
+   border-radius: 15px 15px 15px 15px;
+   opacity: 0.5;
+   filter: alpha(opacity=10);
+
+
 }
 article{
-    background-color:#B3B3B3;
-    border: 1px solid #928490;
+  background-color: white;
     padding: 5%;
     box-sizing: border-box;
     margin:3%;
-     color: white;
-
-
-   
-    
+    color: white;
+    height: 30vh;
+    width: 80%;
+    opacity: 1;
+    filter: Alpha(opacity=100);
 }
 h2{
     font-size:3em;
-  
+    color: #00B148;
+}
+
+a{
+    margin-right: 2vh;
+    color: #2A282D;
+    background-color: #00B148;
+    border-radius: 15px 15px 15px 15px;
 }
 
 .lien{

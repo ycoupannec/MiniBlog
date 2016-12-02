@@ -44,6 +44,7 @@
 		</header>
         		<main>
 			<section class="container">
+                {{#articleblog}}
 				  <a data-toggle="modal" data-target="#myModal">Lire plus</a>
 				<div class="modal fade" id="myModal" role="dialog">
 					<div class="modal-dialog modal-lg">
@@ -51,17 +52,15 @@
 									<article class="col-xs-12 col-md-4">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
-												<div class="dateCreation">10/10/98</div>
-												<div class="sujetArticle"><h2>Titre article</h2></div>
+												<div class="dateCreation">{{dateIncri}}</div>
+												<div class="sujetArticle"><h2>{{sujet}}</h2></div>
 											</div>
 										<div class="modal-body"> <!-- contenu test-->
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Integer dapibus enim ac placerat gravida. Sed hendrerit ullamcorper orci, in blandit nibh efficitur sed.
-												Nam blandit</p>
+											<p>{{contenu}}</p>
 										</div>
 											<div class="row modal-footer"
-												<div class="col-xs-6"><a href="">Auteur</a></div>
-												<div class="col-xs-6"><a href="">Catégorie</a></div>
+												<div class="col-xs-6"><a href="">{{Auteur}}</a></div>
+												<div class="col-xs-6"><a href="">{{nom}}</a></div>
 												<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 											</div>
 			        		</article>
@@ -70,7 +69,7 @@
 				</div>
 
 
-			 {{#articleblog}}
+			 
                     <article class="col-xs-12 col-md-3">
 					<div class="dateCreation">{{date}}</div>
 					<div class="sujetArticle"><h2>{{sujet}}</h2></div>

@@ -22,7 +22,7 @@
 		                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Catégorie <b class="caret"></b></a>
 		                    <ul class="dropdown-menu">
 		                    {{#categorie}}
-		                        <li><a href="#">{{nom}}</a></li>
+		                        <li><a href="index.php?fonctiAppel=1&amp;param={{id}}">{{nom}}</a></li>
 		                    {{/categorie}}
 		                    </ul>
 		                </li>
@@ -31,7 +31,7 @@
 		                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Auteur <b class="caret"></b></a>
 		                    <ul class="dropdown-menu">
 		                    {{#auteur}}
-		                        <li><a href="#">{{nom}}</a></li>
+		                        <li><a href="index.php?fonctiAppel=2&amp;param={{id}}">{{nom}}</a></li>
 		                        {{/auteur}}
 		                    </ul>
 		                </li>
@@ -59,8 +59,8 @@
 											<p>{{contenu}}</p>
 										</div>
 											<div class="row modal-footer"
-												<div class="col-xs-6"><a href="">{{Auteur}}</a></div>
-												<div class="col-xs-6"><a href="">{{nom}}</a></div>
+												<div class="col-xs-6"><a href="index.php?fonctiAppel=2&amp;param={{auteurId}}">{{nomAuteur}}</a></div>
+												<div class="col-xs-6"><a href="index.php?fonctiAppel=1&amp;param={{categorieId}}">{{nom}}</a></div>
 												<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 											</div>
 			        		</article>
@@ -75,9 +75,9 @@
 					<div class="sujetArticle"><h2>{{sujet}}</h2></div>
 					<div class="row">
                      <div class="lien text-center">
-						<div class="col-xs-6"><a href="">{{nomAuteur}}</a></div>
+						<div class="col-xs-6"><a href="index.php?fonctiAppel=2&amp;param={{auteurId}}">{{nomAuteur}}</a></div>
 
-						<div class="col-xs-6"><a href="">{{nom}}</a></div>
+						<div class="col-xs-6"><a href="index.php?fonctiAppel=1&amp;param={{categorieId}}">{{nom}}</a></div>
                         </div>
 					</div>
 
@@ -88,5 +88,15 @@
 
 			</section>
 		</main>
+		<footer class="container-fluid">
+		
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/mustache.js"></script>
+		<script type="text/javascript" src="js/javas.js"></script>
+	</body>
+	
+</html>
 
 

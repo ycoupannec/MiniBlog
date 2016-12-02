@@ -1,7 +1,7 @@
 <?php
 
 
-
+include ".config.php";
 $nomAuteur = $_REQUEST["nom"];
 $prenom = $_REQUEST["prenom"];
 $nom = $_REQUEST["categorie"];
@@ -9,6 +9,14 @@ $sujet = $_REQUEST["sujet"];
 $contenu = $_REQUEST["contenu"];
 $date = $_REQUEST["date"];
 
+try
+{
+  $bdd = new PDO($lienConnect,$login, $MDP);
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
 
 $erreur=false;
 

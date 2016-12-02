@@ -1,6 +1,6 @@
 @font-face {
   font-family: MyFont;
-  src: url(Roboto-BlackItalic.ttf);
+  src: url(Roboto-Black.ttf);
 }
 body {
   background-image: url("background.png");
@@ -10,8 +10,8 @@ body {
 section{
    background-color:  #2A282D;
    border-radius: 15px 15px 15px 15px;
-   opacity: 0.5;
-   filter: alpha(opacity=10);
+   opacity: 1;
+   filter: alpha(opacity=100);
 
 
 }
@@ -23,9 +23,14 @@ article{
     color: white;
     height: 30vh;
     width: 80%;
-    opacity: 1;
+    opacity: 0.7;
     filter: Alpha(opacity=100);
 }
+article:hover
+{
+    opacity: 1;
+}
+
 h2{
     font-size:3em;
     color: #00B148;
@@ -48,4 +53,24 @@ a{
 .dateCreation{
     position: absolute;
     top: 0px;
+}
+.Auteur
+{
+  text-decoration: none;
+  opacity: 0.7;
+  filter: Alpha(opacity=100);
+}
+.Auteur:hover
+{
+  opacity: 1;
+}
+.Categ
+{
+  text-decoration: none;
+  opacity: 0.7;
+  filter: Alpha(opacity=100);
+}
+.Categ:hover
+{
+  opacity: 1;
 }

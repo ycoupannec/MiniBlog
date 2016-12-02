@@ -1,0 +1,69 @@
+		<main>
+			{{#articleblog}}
+			<form class="" action="verification.php" method="post">
+			<section class="container">
+				<article class="col-xs-12">
+
+						<h2>Auteur :</h2>
+
+						<label for="nom">
+						    Nom :
+						    <input class="form-control" id="nom" type="text" placeholder="nom" value="{{nomAuteur}}" name="nom"/>
+						</label>
+						<label for="prenom">
+						    Prénom :
+						    <input class="form-control" id="prenom" type="text" placeholder="prenom" value="{{prenom}}" name="prenom" />
+						</label>
+
+
+
+				</article>
+
+				<article class="col-xs-12">
+
+						<h2>Catégorie :</h2>
+
+						<select class="selectpicker" id="categorie" name="categorie">
+						{{#categorie}}
+						  <option>{{nom}}</option>
+						  {{/categorie}}
+						</select>
+
+						<label for="ajouter">
+						    Ajouter :
+						    <input class="form-control" id="ajouter" type="text" placeholder="ajouter" value="{{nom}}" name="categorie" />
+						</label>
+
+
+
+				</article>
+
+				<article class="col-xs-12">
+
+						<h2>Article :</h2>
+
+
+
+						<label for="sujet">
+						    Sujet :
+						    <input class="form-control" id="sujet" type="text" placeholder="sujet" value="{{sujet}}" name="sujet" />
+						</label>
+
+						<label for="contenu">Contenu :</label>
+						<textarea class="form-control" id="contenu" name="contenu" value="{{contenu}}" name="contenu"></textarea>
+
+
+
+				</article>
+
+					
+					<button type="submit" name="valider">ajouter</button>
+					<button type="reset">réinitialiser</button>
+			</section>
+
+			</form>
+			{{/articleblog}}
+		</main>
+
+
+

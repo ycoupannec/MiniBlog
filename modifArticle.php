@@ -5,6 +5,8 @@
 
 
 		<main>
+			<form class="" action="verification.php" method="post">
+
 			<section class="container">
 				<article class="col-xs-12">
 
@@ -27,7 +29,7 @@
 
 						<h2>Catégorie :</h2>
 
-						<select class="selectpicker">
+						<select class="selectpicker" id="categorie">
 						  <option>Mustard</option>
 						  <option>Ketchup</option>
 						  <option>Relish</option>
@@ -61,9 +63,13 @@
 				</article>
 
 
-
+					<button type="submit" name="valider">ajouter</button>
+					<button type="reset">réinitialiser</button>
 			</section>
+
+			</form>
 		</main>
+
 
 		<?php
 	include "footer.php";

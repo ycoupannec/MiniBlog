@@ -3,7 +3,7 @@
                 {{#articleblog}}
                 
 				  
-					<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal fade" id="myModal{{articleId}}" role="dialog">
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
 									
@@ -31,7 +31,7 @@
 			 
                     <article class="col-xs-12 col-md-3" >
 					<div class="dateCreation">{{date}}</div>
-					<div class="sujetArticle" data-toggle="modal" data-target="#myModal"><h2>{{sujet}}</h2></div>
+					<div class="sujetArticle" data-toggle="modal" data-target="#myModal{{articleId}}"><h2>{{sujet}}</h2></div>
 					<div class="row">
                      <div class="lien text-center">
 						<div class="col-xs-6"><a href="index.php?fonctiAppel=2&amp;param={{auteurId}}">{{nomAuteur}}</a></div>

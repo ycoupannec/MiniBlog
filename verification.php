@@ -7,7 +7,10 @@ $prenom = $_REQUEST["prenom"];
 $nom = $_REQUEST["categorie"];
 $sujet = $_REQUEST["sujet"];
 $contenu = $_REQUEST["contenu"];
-$date = $_REQUEST["date"];
+$date=date("Y-m-d");  
+
+
+
 
 try
 {
@@ -57,7 +60,6 @@ if ($erreur!=true){
   $res=$sth->fetch();
   $test=$sth->rowCount();
 
-  echo "SELECT * FROM `auteur` WHERE `nom`=".$prenom." and `prenom`= ".$nomAuteur." ";
 
 
   if ($test >= 1){
@@ -66,7 +68,7 @@ if ($erreur!=true){
       
   }
   else{ 
-      echo "l'auteur n'existe pas ";
+   
       $sth = $bdd->prepare('INSERT INTO `auteur` (`id`,  `nom`, `prenom`) VALUES (NULL,  :nom, :prenom);');
       $sth->bindParam(':nom',$nomAuteur,PDO::PARAM_STR);
       $sth->bindParam(':prenom',$prenom,PDO::PARAM_STR);
@@ -87,7 +89,7 @@ if ($erreur!=true){
 
 
   print_r($test);
-  echo "SELECT * FROM `auteur` WHERE `nom`=".$prenom." and `prenom`= ".$nomAuteur." ";
+
 
 
   if ($test >= 1){
@@ -108,9 +110,11 @@ if ($erreur!=true){
   }
 
   //AJOUT DE L'ARTICLE 
-  $sth = $bdd->prepare('INSERT INTO `article`(`id`, `sujet`, `contenu`,  `categorieId`, `auteurId`) VALUES (NULL, :sujet, :contenu, :categorieId, :auteurId);');
+  $sth = $bdd->prepare('INSERT INTO `article`(`id`, `sujet`, `contenu`,
+  `dateCreation`, `categorieId`, `auteurId`) VALUES (NULL, :sujet, :contenu, :dateCreation, :categorieId, :auteurId);');
   $sth->bindParam(':sujet',$sujet,PDO::PARAM_STR);
   $sth->bindParam(':contenu',$contenu,PDO::PARAM_STR);
+  $sth->bindParam(':dateCreation',$date,PDO::PARAM_STR);
   $sth->bindParam(':categorieId',$idCategorie,PDO::PARAM_INT);
   $sth->bindParam(':auteurId',$idAuteur,PDO::PARAM_INT);
   $sth->execute();
